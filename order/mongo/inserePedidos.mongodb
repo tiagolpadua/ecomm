@@ -1,0 +1,73 @@
+se("ecomm-account")
+
+let user = db.users.findOne({ cpf: '887.604.980-05'});
+let userTwo = db.users.findOne({ cpf: '997.089.370-02'});
+
+use("ecomm-order")
+
+db.orders.insertMany([
+    {
+        criadoEm: Date(),
+        cliente: {
+            _id: user._id,
+            nome: user.name
+        },
+        enderecoEntrega: {
+            rua: "Rua Otávio Rola",
+            numero: "200",
+            complemento: "Casa",
+            bairro: "Nova Estação",
+            cep: "69918-388",
+            cidade: "Rio Branco",
+            uf: "AC"
+        },
+        itens: [
+            {
+                nome: "Clean Architecture",
+                _id: ObjectId('63c6a341a02317131691fcaa'),
+                quantidade: 1,
+                preco: NumberDecimal("102.9"),
+                desconto: NumberDecimal("0"),
+            },
+            {
+                nome: "Notebook Samsung",
+                _id: ObjectId('63c6a341a02317131691fca8'),
+                quantidade: 1,
+                preco: NumberDecimal("3523"),
+                discount: NumberDecimal("20"),
+            }
+        ]
+    },
+    {
+        createdAt: Date(),
+        customer: {
+            _id: userTwo._id,
+            name: userTwo.name
+        },
+        deliveryAddress: {
+            street: "Rua Otávio Rola",
+            number: "200",
+            complement: "Casa",
+            district: "Nova Estação",
+            cep: "69918-388",
+            city: "Rio Branco",
+            uf: "AC"
+        },
+        itens: [
+            {
+                name: "Sofá 3 lugares",
+                _id: ObjectId("63c6a341a02317131691fca9"),
+                quantity: 1,
+                unitPrice: NumberDecimal("2500"),
+                discount: NumberDecimal("500"),
+            },
+            {
+                name: "Mesa de jantar 6 lugares",
+                _id: ObjectId("63c6a341a02317131691fcab"),
+                quantity: 1,
+                unitPrice: NumberDecimal("3678.98"),
+                discount: NumberDecimal("1000"),
+            }
+        ]
+    },
+])

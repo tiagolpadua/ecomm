@@ -1,0 +1,71 @@
+use('ecomm-account');
+
+db.users.insertMany([
+    {
+        nome: 'Túlio Yoshimura',
+        email: 'yoshimura_tulio@gmail.com',
+        senha: '5pAwX2diMD',
+        data: new Date(),
+        cpf: '887.604.980-05',
+        telefone: '(42) 93524-3869',
+        endereco: {
+            rua: 'Rua João Martins da Silva Filho',
+            numero: '230',
+            complemento: 'Apto 801',
+            bairro: 'Alto Boqueirão',
+            cidade: 'Curitiba',
+            uf: 'PR',
+            cep: '81720-342'
+        }
+    },
+    {
+        nome: 'Mariana Hamada',
+        email: 'marianahamada@outlook.com',
+        senha: 'cejU00llJR',
+        data: new Date(),
+        cpf: '997.089.370-02',
+        telefone: '(51) 93571-6066',
+        endereco: {
+            rua: 'Rua Júlio de Castilhos 711',
+            numero: '230',
+            complemento: 'Apto 502',
+            bairro: 'Centro',
+            cidade: 'Osório',
+            uf: 'RS',
+            cep: '95520-975'
+        }
+    },
+    {
+        nome: 'Alice Gonçalves',
+        email: 'goncalvesalice@hotmail.com',
+        senha: '0iDCWlg7Wq',
+        data: new Date(),
+        cpf: '286.364.260-06',
+        telefone: '(61) 92335-4645',
+        endereco: {
+            rua: 'Quadra 511 Conjunto 11',
+            numero: '88',
+            bairro: 'Recanto das Emas',
+            cidade: 'Brasília',
+            uf: 'DF',
+            cep: '72660-333'
+        }
+    },
+    {
+        nome: 'Renato Mantovani',
+        email: 'mantovani_renato@yahoo.com.br',
+        senha: 'uLTTFz86dl',
+        data: new Date(),
+        cpf: '887.604.980-05',
+        telefone: '(82) 93143-2219',
+        endereco: {
+            rua: 'Rua Prof. Sandoval Arroxelas',
+            numero: '625',
+            complemento: 'Apto 902',
+            bairro: 'Ponta Verde',
+            cidade: 'Maceió',
+            uf: 'AL',
+            cep: '57035-230'
+        }
+    }
+]);
