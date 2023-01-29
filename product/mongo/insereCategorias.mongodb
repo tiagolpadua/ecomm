@@ -1,0 +1,12 @@
+use('ecomm-product')
+
+db.categories.insertMany([
+   { item: "INFORMÁTICA", status: "ATIVA" },
+   { item: "BELEZA", status: "INATIVA" },
+   { item: "CELULARES", status: "ATIVA" },
+   { item: "MÓVEIS", status: "ATIVA" },
+   { item: "LUXO", status: "INATIVA" },
+   { item: "ESPORTE", status: "INATIVA" },
+   { item: "AUTOMOTIVA", status: "ATIVA" },
+   { item: "LIVROS", status: "ATIVA" }
+])

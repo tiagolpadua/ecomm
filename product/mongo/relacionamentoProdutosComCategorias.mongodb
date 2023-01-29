@@ -1,0 +1,50 @@
+use('ecomm-product')
+
+const categories = db.categories.find({
+    status: 'ATIVA'
+});
+
+// categories.forEach((category) => {
+//     console.log(category.item)
+//     // db.products.updateMany({
+//     //     categoria: { $eq: category.nome }
+//     // }, {
+//     //     $unset: {
+//     //         'categoria': ""
+//     //     }
+//     // })
+// });
+
+categories.forEach((category) => {
+    db.products.updateMany({
+        categoria: { $eq: category.item }
+    }, {
+        $set: {
+            categoria: {
+                _id: category._id,
+                nome: category.item,
+            }
+        }
+    })
+});
+
+// categories.forEach((category) => {
+//     db.products.updateMany({
+//         cat: { $eq: category.nome }
+//     }, {
+//         $set: {
+//             'categoria.categoria_id': category._id,
+//             'categoria.nome': category.nome
+//         }
+//     })
+// });
+
+// categories.forEach((category) => {
+//     db.products.updateMany({
+//         cat: { $eq: category.nome }
+//     }, {
+//         $unset: {
+//             'cat': ""
+//         }
+//     })
+// });

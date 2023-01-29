@@ -1,0 +1,3 @@
+use('ecomm-product')
+
+db.products.find({estoque: {$gt: 3}})
